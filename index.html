@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Giới thiệu bản thân</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #ffe6f0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      color: #ff3399;
+      text-shadow: 2px 2px #fff;
+      font-size: 2.5em;
+    }
+
+    p {
+      color: #199494;
+      /* font-size: 1.2em; */
+      max-width: 1000px;
+      padding: 0 20px;
+      /* font-size: 20px;  //Hoặc 1.2em, 150%, v.v. */
+      /* font-weight: bold; nếu muốn in đậm */
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: fall linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes fall {
+      0% {
+        top: -10%;
+        opacity: 1;
+      }
+      100% {
+        top: 110%;
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>  
+  <h1>💖 Xin chào! Tôi là Trần Hữu Thuần 💖</h1>
+  <!-- Hình ảnh đại diện -->
+   
+  <!-- <img src="https://example.com/avatar.jpg"
+     alt="Ảnh đại diện của tôi"
+     style="width: 200px; border-radius: 50%; margin-bottom: 10px;"> -->
+
+     <img src="https://example.com/avatar.jpg"
+     style="width: 200px; border-radius: 50%;">
+
+<p1 style="color: #761f81; font-weight: bold;">Ảnh đại diện của tôi</p1>
+
+  <p style="font-size: 20px; font-weight: bold;">
+    Tôi là một người yêu thích lập trình, đam mê công nghệ và sáng tạo.<br>
+    Tôi thích khám phá, học hỏi và chia sẻ những điều thú vị trong cuộc sống.<br>
+    Cảm ơn bạn đã ghé thăm trang web nhỏ này!
+  </p>
+  <script>//<br> : XUỐNG DÒNG , </b> CHỮ ĐẬM
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 3 + Math.random() * 2 + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    setInterval(createHeart, 200);
+  </script>
+
+</body>
+</html>
